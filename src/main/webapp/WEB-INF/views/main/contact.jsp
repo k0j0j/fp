@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 
 <link rel="stylesheet"
-	href="${ contextPath }/resources/css/main/clean-blog.css?ver=1.1"
+	href="${ contextPath }/resources/css/main/clean-blog.css"
 	type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Lato:400,600,700"
 	rel="stylesheet" />
@@ -43,7 +43,11 @@
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
-
+<style>
+body {
+	padding-top:70px;
+}
+</style>
 
 </head>
 

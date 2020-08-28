@@ -8,7 +8,7 @@
 <c:set var="contextPath"
 	value="${ pageContext.servletContext.contextPath }" scope="application" />
 <link rel="stylesheet"
-	href="${ contextPath }/resources/css/main/clean-blog.css?ver=1.1"
+	href="${ contextPath }/resources/css/main/clean-blog.main.css?ver=1.1"
 	type="text/css">
 
 
@@ -25,11 +25,11 @@ type="text/css"> --%>
 
 <!-- Bootstrap core CSS -->
 <link rel="stylesheet" type="text/css"
-	href="${contextPath}/resources/vendor/bootstrap/css/bootstrap.css">
+	href="${contextPath}/resources/vendor/main/bootstrap/css/bootstrap.css">
 
 <!-- Custom fonts for this template -->
 <link
-	href="${contextPath}/resources/vendor/fontawesome-free/css/all.min.css"
+	href="${contextPath}/resources/vendor/main/fontawesome-free/css/all.min.css"
 	rel="stylesheet" type="text/css">
 <link
 	href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic'
@@ -66,7 +66,7 @@ type="text/css"> --%>
 			</button>
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav ml-auto">
-					<li class="nav-item"><a class="nav-link" href="index.html">LOGIN</a>
+					<li class="nav-item"><a class="nav-link" href="#">LOGIN</a>
 					</li>
 					<li class="nav-item"><a class="nav-link" href="about.html">SIGN
 							UP</a></li>
@@ -169,12 +169,12 @@ type="text/css"> --%>
 
 
 	<!-- Bootstrap core JavaScript -->
-	<script src="${ contextPath }/resources/vendor/jquery/jquery.min.js"></script>
+	<script src="${ contextPath }/resources/vendor/main/jquery/jquery.min.js"></script>
 	<!-- <script
 		src="${ contextPath }/resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
  -->
 	<!-- Custom scripts for this template -->
-	<script src="${ contextPath }/resources/js/clean-blog.min.js"></script>
+	<script src="${ contextPath }/resources/js/main/clean-blog.min.js"></script>
 
 
 </body>

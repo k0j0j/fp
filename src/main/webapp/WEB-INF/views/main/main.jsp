@@ -1,17 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="contextPath" value="${ pageContext.servletContext.contextPath }" scope="application"/>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 
-<link rel="stylesheet"
-	href="${ contextPath }/resources/css/main/clean-blog.css?ver=1.1"
-	type="text/css">
-<link href="https://fonts.googleapis.com/css?family=Lato:400,600,700"
-	rel="stylesheet" />
-<link href="${ contextPath }/resources/css/main/main.css" rel="stylesheet" />
+
 
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -43,6 +39,12 @@
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
+<link rel="stylesheet"
+	href="${ contextPath }/resources/css/main/clean-blog.css?ver=1.1"
+	type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Lato:400,600,700"
+	rel="stylesheet" />
+<link href="${ contextPath }/resources/css/main/main.css" rel="stylesheet" />
 
 <style>
 #hotkeyword {
@@ -61,15 +63,14 @@
 }
 
 .container {
-	position : relation;
+	width:100%;
 }
 
 .food {
 	width : 100%;
 	height : 10%;
 	font-weight: bold;
-	color : white;
-	background-color: darkgray;
+	color : #000;
 	font-family: Lato,'Helvetica Neue',Helvetica,Arial,sans-serif;
 }
 
@@ -82,7 +83,6 @@
 .swiper-slide {
 	text-align:center;
 	display:flex; /* 내용을 중앙정렬 하기위해 flex 사용 */
-	align-items:center; /* 위아래 기준 중앙정렬 */
 	justify-content:center; /* 좌우 기준 중앙정렬 */
 	
 	
@@ -90,18 +90,44 @@
 .swiper-slide img {
 	max-width:100%; /* 이미지 최대너비를 제한, 슬라이드에 이미지가 여러개가 보여질때 필요 */
 	/* 이 예제에서 필요해서 설정했습니다. 상황에따라 다를 수 있습니다. */
-	border-radius:7px;
 	
 }
+
+
 
 .adv {
 	width : 50%;
 	height : 100px;
 	font-weight: bold;
-	color : white;
+	color : black;
 	border : 1px solid black;
 	font-family: Lato,'Helvetica Neue',Helvetica,Arial,sans-serif;
+	display:flex; /* 내용을 중앙정렬 하기위해 flex 사용 */
+	align-items:center; /* 위아래 기준 중앙정렬 */
+	justify-content:center; /* 좌우 기준 중앙정렬 */
+	margin-left:285px;
+	
 }
+
+.card-img-top{
+	width : 100%;
+	height : 230px;
+}
+
+.card {
+	width : 100%;
+	height : 380px;
+}
+
+#more {
+	border-radius:7px;
+	padding : 5px;
+	font-weight: 200;
+}
+
+
+
+
 
 </style>
 
@@ -122,7 +148,7 @@
 
 						<!-- Search Bar -->
     <div class="s009">
-      <form>
+		<form action="search.do" method="get">
         <div class="inner-form">
           <div class="basic-search">
             <div class="input-field">
@@ -138,6 +164,7 @@
           </div>
         </div>
       </form>
+      
       <br>
       <div class="btn-group">
   <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false" id="hotkeyword">
@@ -183,17 +210,21 @@
 
 	</div>
 </div>
-	<br><br>
+	<br><br><hr>
+	
 	<div class="container">
 		<div class="food">
-		 &nbsp;#추천하는 맛집
+		&nbsp;#맛집 스토리
+
+
 		</div>
 	</div>
 	<br>
-	<div class="container">
+	
+		<div class="container">
 	<div class="swiper-container">
 	<div class="swiper-wrapper">
-		<div class="swiper-slide"><a href="<c:url value="detail.do" />"><img src="${contextPath}/resources/img/main/food5.jpg"></a></div>
+		<div class="swiper-slide"><img src="${contextPath}/resources/img/main/food5.jpg" alt="dd"></div>
 		<div class="swiper-slide"><img src="${contextPath}/resources/img/main/food6.jpg"></div>
 		<div class="swiper-slide"><img src="${contextPath}/resources/img/main/food7.jpg"></div>
 		<div class="swiper-slide"><img src="${contextPath}/resources/img/main/food8.jpg"></div>
@@ -201,12 +232,6 @@
 		<div class="swiper-slide"><img src="${contextPath}/resources/img/main/food10.jpg"></div>
 		<div class="swiper-slide"><img src="${contextPath}/resources/img/main/food11.jpg"></div>
 		<div class="swiper-slide"><img src="${contextPath}/resources/img/main/food12.jpg"></div>
-		<div class="swiper-slide"><img src="http://ktsmemo.cdn3.cafe24.com/p/0396.jpg"></div>
-		<div class="swiper-slide"><img src="http://oldmidi.cdn3.cafe24.com/p/0356.jpg"></div>
-		<div class="swiper-slide"><img src="http://ktsmemo.cdn3.cafe24.com/p/0016.jpg"></div>
-		<div class="swiper-slide"><img src="https://ktsmemo.cafe24.com/p/0662.jpg"></div>
-		<div class="swiper-slide"><img src="https://ktsmemo.cafe24.com/p/0300.jpg"></div>
-		<div class="swiper-slide"><img src="https://ktsmemo.cafe24.com/p/0065.jpg"></div>
 		<div class="swiper-slide" style="font-size:50pt;">- 끝 -</div>
 	</div>
 
@@ -219,55 +244,190 @@
 </div>
 	
 	</div>
+<br><hr>
 	
-	
-		<br><br>
 	<div class="container">
 		<div class="food">
-		 &nbsp;#요즘 뜨는 카페
+		 &nbsp;#추천하는 맛집 <a href=" <c:url value="more.do"/>"><button type="button" class="btn btn-outline-dark float-right" id="more">더보기</button></a>
 		</div>
 	</div>
 	<br>
+	
+	<div class="container">
+	<div class="card-deck">
+	<div OnClick="location.href ='detail.do'" style="cursor:pointer;" class="card" >
+  <a href="<c:url value="detail.do" />"><img src="${contextPath}/resources/img/main/food5.jpg" class="card-img-top"></a>
+    <div class="card-body">
+      <h5 class="card-title">브루클린 인 더 버거 조인트</h5>
+            <p1>양식</p1><br>
+	  <small>서울시 강남구 신사동</small>
+    </div>
+  </div>
+  <div class="card">
+    <img src="${contextPath}/resources/img/main/food6.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">쯔쥬</h5>
+      <p1>중식</p1><br>
+	  <small>서울시 강남구 신사동</small>
+    </div>
+  </div>
+  <div class="card">
+    <img src="${contextPath}/resources/img/main/food7.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">파세로 델 밤비노</h5>
+           <p1>양식</p1><br>
+	  <small>서울시 성북구 동선동4가</small>
+    </div>
+  </div>
+</div>
+</div>
+	
+	
+	
+	
+	
+		<br>
 	
 	<div class="container">
 		<div class="adv">
-			...
+			타임딜 초특가 50,000원 상품권->45,000원!
 		</div>
 	</div>
+	<br><hr>
+	<div class="container">
+		<div class="food">
+		 &nbsp;#요즘 뜨는 카페  <button type="button" class="btn btn-outline-dark float-right" id="more">더보기</button> 
+		</div>
+		<br>
+		<div class="card-deck">
+	<div OnClick="location.href ='detail.do'" style="cursor:pointer;" class="card" >
+  <a href="<c:url value="detail.do" />"><img src="${contextPath}/resources/img/main/cafe1.jpeg" class="card-img-top"></a>
+    <div class="card-body">
+      <h5 class="card-title">FOURB</h5>
+            <p1>카페</p1><br>
+	  <small>서울시 종로구 청진동</small>
+    </div>
+  </div>
+  <div class="card">
+    <img src="${contextPath}/resources/img/main/cafe2.jpeg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">TIME AFTER TIME</h5>
+      <p1>카페</p1><br>
+	  <small>서울시 성동구 성수동</small>
+    </div>
+  </div>
+  <div class="card">
+    <img src="${contextPath}/resources/img/main/cafe3.jpeg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">P.R.D</h5>
+           <p1>카페</p1><br>
+	  <small>서울시 성북구 동선동4가</small>
+    </div>
+  </div>
+</div>
+	</div>
+	<br><hr>
 	
+		<div class="container">
+		<div class="food">
+		 &nbsp;#분위기 좋은 술집  <button type="button" class="btn btn-outline-dark float-right" id="more">더보기</button> 
+		</div>
+		<br>
+		<div class="card-deck">
+	<div OnClick="location.href ='detail.do'" style="cursor:pointer;" class="card" >
+  <a href="<c:url value="detail.do" />"><img src="${contextPath}/resources/img/main/alcohol1.jpeg" class="card-img-top"></a>
+    <div class="card-body">
+      <h5 class="card-title">온오프</h5>
+            <p1>술집</p1><br>
+	  <small>서울시 성북구 동선동2가</small>
+    </div>
+  </div>
+  <div class="card">
+    <img src="${contextPath}/resources/img/main/alcohol4.jpeg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">스페인 야시장</h5>
+      <p1>술집</p1><br>
+	  <small>서울시 마포구 서교동</small>
+    </div>
+  </div>
+  <div class="card">
+    <img src="${contextPath}/resources/img/main/alcohol3.jpeg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">BOIR BOIR</h5>
+           <p1>술집</p1><br>
+	  <small>서울시 중구 필동2가</small>
+    </div>
+  </div>
+</div>
+	</div>
 	<br>
 	
-	<div class="container">
-	<div class="swiper-container">
-	<div class="swiper-wrapper">
-		<div class="swiper-slide"><img src="${contextPath}/resources/img/main/food5.jpg"></div>
-		<div class="swiper-slide"><img src="${contextPath}/resources/img/main/food6.jpg"></div>
-		<div class="swiper-slide"><img src="${contextPath}/resources/img/main/food7.jpg"></div>
-		<div class="swiper-slide"><img src="${contextPath}/resources/img/main/food8.jpg"></div>
-		<div class="swiper-slide"><img src="${contextPath}/resources/img/main/food9.jpg"></div>
-		<div class="swiper-slide"><img src="${contextPath}/resources/img/main/food10.jpg"></div>
-		<div class="swiper-slide"><img src="${contextPath}/resources/img/main/food11.jpg"></div>
-		<div class="swiper-slide"><img src="${contextPath}/resources/img/main/food12.jpg"></div>
-		<div class="swiper-slide"><img src="http://ktsmemo.cdn3.cafe24.com/p/0396.jpg"></div>
-		<div class="swiper-slide"><img src="http://oldmidi.cdn3.cafe24.com/p/0356.jpg"></div>
-		<div class="swiper-slide"><img src="http://ktsmemo.cdn3.cafe24.com/p/0016.jpg"></div>
-		<div class="swiper-slide"><img src="https://ktsmemo.cafe24.com/p/0662.jpg"></div>
-		<div class="swiper-slide"><img src="https://ktsmemo.cafe24.com/p/0300.jpg"></div>
-		<div class="swiper-slide"><img src="https://ktsmemo.cafe24.com/p/0065.jpg"></div>
-		<div class="swiper-slide" style="font-size:50pt;">- 끝 -</div>
-	</div>
-
-	<!-- 네비게이션 -->
-	<div class="swiper-button-next"></div><!-- 다음 버튼 (오른쪽에 있는 버튼) -->
-	<div class="swiper-button-prev"></div><!-- 이전 버튼 -->
-
-	<!-- 페이징 -->
-	<div class="swiper-pagination"></div>
-</div>
+	<hr>
 	
+	
+	<div class="container">
+		<div class="food">
+		 &nbsp;#추천하는 양식  <button type="button" class="btn btn-outline-dark float-right" id="more">더보기</button> 
+		</div>
+		<br>
+		<div class="card-deck">
+	<div OnClick="location.href ='detail.do'" style="cursor:pointer;" class="card" >
+  <a href="<c:url value="detail.do" />"><img src="${contextPath}/resources/img/main/italian1.jpeg" class="card-img-top"></a>
+    <div class="card-body">
+      <h5 class="card-title">언더야드</h5>
+            <p1>양식</p1><br>
+	  <small>서울시 용산구 한남동</small>
+    </div>
+  </div>
+  <div class="card">
+    <img src="${contextPath}/resources/img/main/italian2.jpeg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">이태리 총각</h5>
+      <p1>양식</p1><br>
+	  <small>서울시 종로구 익선동</small>
+    </div>
+  </div>
+  <div class="card">
+    <img src="${contextPath}/resources/img/main/italian3.jpeg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">스킬렛</h5>
+           <p1>양식</p1><br>
+	  <small>서울시 강남구 신사동</small>
+    </div>
+  </div>
+</div>
 	</div>
+	<br>
+	
+	<br>
 
+	
+
+	<!-- Bootstrap core JavaScript -->
+	<script src="${contextPath}/resources/vendor/main/jquery/jquery.min.js"></script>
+	 <script
+		src="${contextPath}/resources/vendor/main/bootstrap/js/bootstrap.bundle.min.js"></script>
+ 
+	<!-- Custom scripts for this template -->
+	<script src="${contextPath}/resources/js/main/clean-blog.min.js"></script>
+<br><br>
+	<jsp:include page="../common/footer2.jsp" />
+	
+
+
+	<!-- script -->
+	<%-- <script src="${ contextPath }/resources/js/main/extention/choices.js"></script>
 	<script>
+		const customSelects = document.querySelectorAll("select");
+		const choices = new Choices('select', {
+			searchEnabled : false,
+			itemSelectText : '',
+			removeItemButton : true,
+		});
+
+	</script> --%>
+	
+		<script>
 	new Swiper('.swiper-container', {
 
 		slidesPerView : 3, // 동시에 보여줄 슬라이드 갯수
@@ -290,30 +450,7 @@
 		},
 	});
 	</script>
-<br><br>
-	<jsp:include page="../common/footer2.jsp" />
-	
 
-	<!-- Bootstrap core JavaScript -->
-	<script src="${contextPath}/resources/vendor/main/jquery/jquery.min.js"></script>
-	 <script
-		src="${contextPath}/resources/vendor/main/bootstrap/js/bootstrap.bundle.min.js"></script>
- 
-	<!-- Custom scripts for this template -->
-	<script src="${contextPath}/resources/js/main/clean-blog.min.js"></script>
-
-
-	<!-- script -->
-	<script src="${ contextPath }/resources/js/main/extention/choices.js"></script>
-	<script>
-		const customSelects = document.querySelectorAll("select");
-		const choices = new Choices('select', {
-			searchEnabled : false,
-			itemSelectText : '',
-			removeItemButton : true,
-		});
-
-	</script>
 </body>
 
 </html>
