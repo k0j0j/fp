@@ -19,7 +19,6 @@ type="text/css"> --%>
 <meta name="description" content="">
 <meta name="author" content="">
 <title>Clean Blog - Start Bootstrap Theme</title>
-<link rel="icon" type="image/x-icon" href="${contextPath}/resources/img/main/restaurant.png" />
 
 <!-- Bootstrap core CSS -->
 <link rel="stylesheet" type="text/css"
@@ -50,7 +49,7 @@ type="text/css"> --%>
 <body>
 	<!-- Navigation 로그인 전 -->
 	 
-	<nav class="navbar navbar-expand-lg navbar-light fixed-top"
+	<nav class="navbar navbar-expand-lg navbar-light shadow fixed-top"
 		id="mainNav">
 		<div class="container">
 			<a class="navbar-brand" href="index.jsp">HONEYPOINT</a>

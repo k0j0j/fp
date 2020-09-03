@@ -60,4 +60,9 @@ public class HomeController {
 	public String morePage() {
 		return "main/more";
 	}
+	
+	@RequestMapping("notice.do")
+	public String noticePage() {
+		return "main/notice";
+	}
 }

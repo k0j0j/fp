@@ -21,6 +21,7 @@ type="text/css"> --%>
 <meta name="description" content="">
 <meta name="author" content="">
 
+
 <title>Clean Blog - Start Bootstrap Theme</title>
 
 <!-- Bootstrap core CSS -->

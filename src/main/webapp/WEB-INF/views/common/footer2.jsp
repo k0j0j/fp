@@ -44,14 +44,14 @@ type="text/css"> --%>
 	rel="stylesheet">
 
 <style>
-
-
 .font {
-	font-family:"Nanum Gothic",'Malgun Gothic',sans-serif;
-	
+	font-family: "Nanum Gothic", 'Malgun Gothic', sans-serif;
 }
 
-
+#top-scroll {
+	width: 30px;
+	height: 30px;
+}
 </style>
 </head>
 
@@ -64,7 +64,7 @@ type="text/css"> --%>
 			<div class="row">
 				<div class="col-lg-6 h-100 text-center text-lg-left my-auto">
 					<ul class="list-inline mb-2">
-						<li class="list-inline-item"><a href="#">Notice</a></li>
+						<li class="list-inline-item"><a href="notice.do">Notice</a></li>
 						<li class="list-inline-item">&sdot;</li>
 						<li class="list-inline-item"><a href="contact.do">Contact</a></li>
 						<li class="list-inline-item">&sdot;</li>
@@ -76,32 +76,32 @@ type="text/css"> --%>
 						right reserved.
 					</p>
 				</div>
+				<!-- top-scroll -->
 				<div class="col-lg-6 h-100 text-center text-lg-right my-auto">
 					<ul class="list-inline mb-0">
-						<li class="list-inline-item mr-3"><a href="#"> <i
-								class="fab fa-facebook fa-2x fa-fw"></i>
-						</a></li>
-						<li class="list-inline-item mr-3"><a href="#"> <i
-								class="fab fa-twitter-square fa-2x fa-fw"></i>
-						</a></li>
-						<li class="list-inline-item"><a href="#"> <i
-								class="fab fa-instagram fa-2x fa-fw"></i>
-						</a></li>
-
-
+						<li class="list-inline-item mr-3"><img
+							src="${contextPath}/resources/img/main/top.png" id="top-scroll"></li>
 					</ul>
 				</div>
 			</div>
 		</div>
-
 	</footer>
-	
 
+	<!-- top-scroll -->
+	<script>
+		$("#top-scroll").click(function() {
+			$("html, body").animate({
+				scrollTop : 0
+			}, "slow");
+			return false;
+		});
+	</script>
 
 
 
 	<!-- Bootstrap core JavaScript -->
-	<script src="${ contextPath }/resources/vendor/main/jquery/jquery.min.js"></script>
+	<script
+		src="${ contextPath }/resources/vendor/main/jquery/jquery.min.js"></script>
 	<script
 		src="${ contextPath }/resources/vendor/main/bootstrap/js/bootstrap.bundle.min.js"></script>
 
